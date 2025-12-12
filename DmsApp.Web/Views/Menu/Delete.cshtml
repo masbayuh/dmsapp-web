@@ -1,0 +1,31 @@
+﻿@model DmsApp.Web.Models.MenuItem
+@{
+    ViewData["Title"] = "Edit Menu";
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card border-danger shadow-sm">
+            <div class="card-body">
+                <h4 class="text-danger">Delete Confirmation</h4>
+                <p>Are you sure you want to delete menu <strong>@Model.MenuName</strong> (Code: @Model.MenuCode)? This action cannot be undone. </p>
+
+                <dl class="row">
+                    <dt class="col-sm-4">PIC</dt>
+                    <dd class="col-sm-8">@Model.PIC</dd>
+
+                    <dt class="col-sm-4">Last Update</dt>
+                    <dd class="col-sm-8">@Model.LastUpdate.ToString("yyyy-MM-dd")</dd>
+
+                </dl>
+
+                <form asp-action="Delete" method="post" class="text-end">
+                    <input type="hidden" asp-for="Id" />
+                    <a class="btn btn-secondary me-2" href="@Url.Action("Index", "Menu")">Cancel</a>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>

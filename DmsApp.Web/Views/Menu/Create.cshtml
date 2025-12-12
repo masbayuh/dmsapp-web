@@ -1,0 +1,67 @@
+﻿@model DmsApp.Web.Models.MenuItem
+@{
+    ViewData["Title"] = "Create Menu";
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h4 class="mb-3">Create New Menu</h4>
+
+                <form asp-action="Create" method="post" class="row g-3">
+                    <div class="col-md-6">
+                        <label asp-for="MenuName" class="form-label"></label>
+                        <input asp-for="MenuName" class="form-control" />
+                        <span asp-validation-for="MenuName" class="text-danger"></span>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="MenuCode" class="form-label"></label>
+                        <input asp-for="MenuCode" class="form-control" />
+                    </div>
+
+                    <div class="col-12">
+                        <label asp-for="Description" class="form-label"></label>
+                        <textarea asp-for="Description" class="form-control" rows="3"></textarea>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label asp-for="PIC" class="form-label"></label>
+                        <input asp-for="PIC" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label asp-for="Version" class="form-label"></label>
+                        <input asp-for="Version" class="form-control" />
+                    </div>
+
+                    <div class="col-md-4">
+                        <label asp-for="LastUpdate" class="form-label"></label>
+                        <input asp-for="LastUpdate" class="form-control" type="date" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Module" class="form-label"></label>
+                        <input asp-for="Module" class="form-control" />
+                    </div>
+
+                    <div class="col-md-6">
+                        <label asp-for="Status" class="form-label"></label>
+                        <input asp-for="Status" class="form-control" />
+                    </div>
+
+                    <div class="col-12 text-end">
+                        <a class="btn btn-secondary me-2" href="@Url.Action("Index", "Menu")">Cancel</a>
+                        <button type="submit" class="btn btn-primary">Create</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
