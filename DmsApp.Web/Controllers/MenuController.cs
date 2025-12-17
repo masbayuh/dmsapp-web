@@ -11,7 +11,7 @@ namespace DmsApp.Web.Controllers
         {
             _service = service;
         }
-        public IActionResult Index()
+        public IActionResult Dashboard()
         {
             var items = _service.GetAll();
             return View(items);
@@ -39,7 +39,7 @@ namespace DmsApp.Web.Controllers
         {
             if (ModelState.IsValid) return View(model);
             _service.Create(model);
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Dashboard));
         }
 
         public IActionResult Edit(int id)
@@ -61,7 +61,7 @@ namespace DmsApp.Web.Controllers
 
             var success = _service.Update(model);
             if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Dashboard));
         }
 
         public IActionResult Delete(int id)
@@ -80,7 +80,7 @@ namespace DmsApp.Web.Controllers
         {
             var success = _service.Delete(id);
             if (!success) return NotFound();
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(Dashboard));
         }
     }
 }
