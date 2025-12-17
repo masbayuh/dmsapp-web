@@ -82,5 +82,11 @@ namespace DmsApp.Web.Controllers
             if (!success) return NotFound();
             return RedirectToAction(nameof(Dashboard));
         }
+
+        public IActionResult Scoring()
+        {
+            var model = new GroupItemModel();
+            return View(model);
+        }
     }
 }
