@@ -11,7 +11,162 @@
                 <h4 class="mb-3">Scoring Menu</h4>
 
                 <form asp-action="Scoring" method="post" class="row g-3">
+                    <div class="col-md-4">
+                        <label asp-for="NomorApplikasi" ></label>
+                        <input asp-for="NomorApplikasi" class="form-control" />
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+                        <label asp-for="Nama"></label>
+                        <input asp-for="Nama" class="form-control" />
+                    </div>
+                    <hr />
+                    <div class="col-md-4">
+                        <label asp-for="TempatLahir"></label>
+                        <input asp-for="TempatLahir" class="form-control" />
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="TanggalLahir"></label>
+                        <input asp-for="TanggalLahir" class="form-control" type="date" />
+                    </div>
                     
+                    <div class="col-md-4">
+                        <label asp-for="JenisKelamin"></label>
+                        <input asp-for="JenisKelamin" class="form-control" />
+                    </div>
+                    <div class="col-12">
+                        <label asp-for="Alamat" class="form-label"></label>
+                        <textarea asp-for="Alamat" class="form-control" rows="2"></textarea>
+                    </div>
+
+                    <div class="col-md-4">
+                        <label asp-for="KodePos" class="form-label"></label>
+                        <input asp-for="KodePos" class="form-control"  />
+                    </div>
+                    <hr />
+
+                    @* Informasi 1 *@
+                    <div class="col-md-4">
+                        <label asp-for="UmurPemohon"></label>
+                        <select asp-for="UmurPemohon" class="form-select">
+                            <option value="">-- Select --</option>
+                            <option value="25">56 - 65 Tahun</option>
+                            <option value="50">21 - 30 Tahun</option>
+                            <option value="100">31 - 45 Tahun</option>
+                            <option value="75">46 - 55 Tahun</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-6">
+                        <label asp-for="UmurPemohonPlusTenor" class="form-label"></label>
+                        <select asp-for="UmurPemohonPlusTenor" class="form-select">
+                            <option value="">-- Select --</option>
+                            <option value="25"> Diatas Ketentuan</option>
+                            <option value="100">Dibawah Ketentuan</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="StatusPerkawinan" class="form-label"></label>
+                        <select asp-for="StatusPerkawinan" class="form-select">
+                            <option value="">-- Select --</option>
+                            <option value="25">Belum Kawin dengan > 2 tanggungan</option>
+                            <option value="45">Belum Kawin dengan <= 2 tanggungan</option>
+                            <option value="65">Belum Kawin dengan 0 tanggungan</option>
+                            <option value="85">Kawin dengan > 2 tanggungan</option>
+                            <option value="100">Kawin dengan <= 2 tanggungan</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label asp-for="Pendidikan" class="form-label" ></label>
+                        <select asp-for="Pendidikan" class="form-select">
+                            <option value="">-- Select --</option>
+                            <option value="25">SMA atau dibawahnya</option>
+                            <option value="50">D1, D2, D3, D4</option>
+                            <option value="75">S1</option>
+                            <option value="100">Master atau diatasnya(S2, S3)</option>
+                        </select>
+                    </div>
+                    <hr/>
+
+                    @* Informasi 2 *@
+                    <div class="col-8">
+                        <label asp-for="AlamatTempatTinggal" class="form-label"></label>
+                        <select asp-for="AlamatTempatTinggal" class="form-select">
+                            <option value="">-- Select --</option>
+                            <option value="25">Tidak sesuai dengan data Bank</option>
+                            <option value="100">Sesuai dengan data Bank</option>
+                        </select>
+                    </div>
+                    <div class="col-8">
+                        <label asp-for="KepemilikanTempatTinggal" class="form-label"></label>
+                        <select asp-for="KepemilikanTempatTinggal" class="form-select">
+                            <option value="">-- Select --</option>
+                            <option value="25">Lain-lain</option>
+                            <option value="50">Sewa / Kontrak</option>
+                            <option value="75">Milik sendiri masih diangsur</option>
+                            <option value="100">Milik Sendiri</option> 
+                        </select>
+                    </div>
+                    <div class="col-2"></div>
+                    <div class="col-8">
+                        <label asp-for="LamaMenempati" class="form-label"></label>
+                        <select asp-for="LamaMenempati" class="form-select">
+                            <option value="" > -- Select -- </option>
+                            <option value="25"> <= 2 Tahun</option>
+                            <option value="50"> > 2 - 5 Tahun</option>
+                            <option value="75"> > 5 - 8 Tahun</option>
+                            <option value="100"> > 8 Tahun</option>
+                        </select>
+                    </div>
+                    <hr/>
+
+                    @* Informasi 3 *@
+                    <div class="col-6">
+                        <label asp-for="KategoriPerusahaan" class="form-label"></label>
+                        <select asp-for="KategoriPerusahaan" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value="100"> Lembaga Departemen </option>
+                            <option value="25"> BUMD </option>
+                            <option value="100"> SWASTA tidak punya rating </option>
+                            <option value="25"> SWASTA dengan rating </option>
+                            <option value="75"> SWASTA Kategori I </option>
+                            <option value="50"> SWASTA Kategori II </option>
+                            <option value="0"> SWASTA Kategori III </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="Jabatan" class="form-label"></label>
+                        <select asp-for="Jabatan" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value=""> Staff </option>
+                            <option value=""> Direktur </option>
+                            <option value=""> Komisaris </option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <label asp-for="LamaBekerja" class="form-label"></label>
+                        <select asp-for="LamaBekerja" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value="25"> <= 2 Tahun </option>
+                            <option value="50"> > 2 - 5 Tahun </option>
+                            <option value="75"> > 5 - 10 Tahun </option>
+                            <option value="100"> > 10 Tahun </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="PendapatanTHP" class="form-label"></label>
+                        <select asp-for="PendapatanTHP" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value="25"> <= Rp 10 juta </option>
+                            <option value="50"> > Rp 10 - Rp 25 juta </option>
+                            <option value="75"> > Rp 25 - Rp 50 juta </option>
+                            <option value="100"> > Rp 50 juta </option>
+                        </select>
+                    </div>
+                    <hr/>
+
+                    @* Informasi 4 *@
+
                 </form>
             </div>
         </div>
