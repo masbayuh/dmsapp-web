@@ -166,7 +166,120 @@
                     <hr/>
 
                     @* Informasi 4 *@
+                    <div class="col-md-6">
+                        <label asp-for="RekeningBank" class="form-label"></label>
+                        <select asp-for="RekeningBank" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value="25"> Tidak ada</option>
+                            <option value="50"> Tabungan </option>
+                            <option value="75"> Giro </option>
+                            <option value="100"> Tabungan/Giro + Deposito </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for ="RataRataSaldoPerBulan" class="form-label"></label>
+                        <select asp-for ="RataRataSaldoPerBulan" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value="25"> <= Rp 10 juta</option>
+                            <option value="50"> Rp 10 - Rp 25 juta </option>
+                            <option value="75"> Rp 25 - Rp 50 juta </option>
+                            <option value="100"> > Rp 50 juta </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="TrackRecordPembayaran" class="form-label"></label>
+                        <select asp-for="TrackRecordPembayaran" class="form-select">
+                            <option value=""> --Select-- </option>
+                            <option value="value"> Peminjam Baru </option>
+                            <option value="value"> Angsuran terlambat tapi lancar </option>
+                            <option value="value"> Angsuran tepat waktu </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="TrackDataSLIK" class="form-label"></label>
+                        <select asp-for="TrackDataSLIK" class="form-select">
+                            <option value=""> --Select-- </option>
+                            <option value="value"> Kolektibilitas 3 sd 5 </option>
+                            <option value="value"> Ada tunggakan < 3 bulan </option>
+                            <option value="value"> Tidak ada fasilitas </option>
+                            <option value="value"> Lancar </option>
+                         </select>
+                    </div>
+					<div class="col-md-6">
+						<label asp-for="KepemilikanKartuKredit" class="form-label"></label>
+						<select asp-for="KepemilikanKartuKredit" class="form-select">
+	                        <option value=""> --Select-- </option>
+	                        <option value="25"> Tidak ada </option>
+	                        <option value="value"> Basic </option>
+	                        <option value="value"> Gold </option>
+	                        <option value="value"> Platinum atau diatasnya </option>
+                        </select>
+					</div>
+                    <hr />
 
+                    @* Informasi 5 *@
+                    <div class="col-md-6">
+                        <label asp-for="Tenor" class="form-label"></label>
+                        <select asp-for="Tenor" class="form-select">
+                            <option> -- Select -- </option>
+                            <option> > 15 Tahun </option>
+                            <option> > 10 - 15 Tahun </option>
+                            <option> > 5 - 10 Tahun </option>
+                            <option> <= 5 Tahun </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="DebtServiceRatio" class="form-label"></label>
+                        <select asp-for="DebtServiceRatio" class="form-select">
+                            <option> -- Select -- </option>
+                            <option> > 50% </option>
+                            <option> > 40 - 50% </option>
+                            <option> > 30 - 40% </option>
+                            <option> > <= 30% </option>
+                        </select>
+                    </div>
+                    <hr/>
+
+                    @* Informasi 6 *@
+                    <div class="col-md-6">
+                        <label asp-for="HasilAppraisal" class="form-label"></label>
+                        <select asp-for="HasilAppraisal" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value="25"> Tidak Direkomendasikan </option>
+                            <option value="100"> Marketable </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="LuasBangunan" class="form-label"></label>
+                        <select asp-for="LuasBangunan" class="form-select">
+                            <option value=""> -- Select -- </option>
+                            <option value="25"> > 200 M2 </option>
+                            <option value="50"> > 100 - 200 M2 </option>
+                            <option value="75"> > 45 - 100 M2 </option>
+                            <option value="100"> <= 45 M2 </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="TujuanDariPembiayaan" class="form-label"></label>
+                        <select asp-for="TujuanDariPembiayaan" class="form-select">
+                            <option value=""> --Select-- </option>
+                            <option value="25"> Lain-lain </option>
+                            <option value="50"> Disewakan/Investasi </option>
+                            <option value="75"> Renovasi </option>
+                            <option value="100"> Pertama & Ditempati Sendiri </option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label asp-for="LTV" class="form-label"></label>
+                        <select asp-for="LTV" class="form-select">
+                            <option value=""> --Select-- </option>
+                            <option value="25"> LTV > 90% </option>
+                            <option value="50"> LTV > 80% </option>
+                            <option value="75"> LTV > 70% </option>
+                            <option value="100"> LTV <= 70% </option>
+                            <option value="0"> LTV > 100% </option>
+                        </select>
+                    </div>
                 </form>
             </div>
         </div>
