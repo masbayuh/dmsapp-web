@@ -90,10 +90,7 @@ namespace DmsApp.Web.Controllers
 
         public IActionResult Scoring()
         {
-            var model = new InformasiApplikasiViewModel();
-            //model = informasiApplikasiView;
-
-            //Console.WriteLine("Model Applikasi: " + model);
+            var model = new ScoringViewModel();
 
 
             return View(model);
@@ -101,8 +98,14 @@ namespace DmsApp.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Scoring(InformasiApplikasiViewModel model)
+        public IActionResult Scoring(ScoringViewModel viewModel)
         {
+            var model = new ViewScoringViewModel();
+
+            model.InformasiAplikasi = viewModel.InformasiAplikasi;
+            //ngitungnya disini
+            //model.BobotGroupItem = viewModel.GroupItem;
+
             TempData["ScoringData"] = JsonSerializer.Serialize(model);
 
             return RedirectToAction("ViewScoring");
@@ -115,7 +118,7 @@ namespace DmsApp.Web.Controllers
                 return RedirectToAction("Scoring");
             }
 
-            var model = JsonSerializer.Deserialize<InformasiApplikasiViewModel>(json);
+            var model = JsonSerializer.Deserialize<ViewScoringViewModel>(json);
 
             if (model == null)
             {

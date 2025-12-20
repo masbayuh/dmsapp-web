@@ -1,6 +1,6 @@
 ﻿@using DmsApp.Web.Models.ViewModel
 
-@model InformasiApplikasiViewModel
+@model ScoringViewModel
 @{
     ViewData["Title"] = "Scoring Menu";
 }
@@ -13,44 +13,44 @@
 
                 <form asp-action="Scoring" method="post" class="row g-3">
                     <div class="col-md-4">
-                        <label asp-for="NomorApplikasi" ></label>
-                        <input asp-for="NomorApplikasi" class="form-control" />
+                        <label asp-for="InformasiAplikasi.NomorApplikasi" ></label>
+                        <input asp-for="InformasiAplikasi.NomorApplikasi" class="form-control" />
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-4">
-                        <label asp-for="Nama"></label>
-                        <input asp-for="Nama" class="form-control" />
+                        <label asp-for="InformasiAplikasi.Nama"></label>
+                        <input asp-for="InformasiAplikasi.Nama" class="form-control" />
                     </div>
                     <hr />
                     <div class="col-md-4">
-                        <label asp-for="TempatLahir"></label>
-                        <input asp-for="TempatLahir" class="form-control" />
+                        <label asp-for="InformasiAplikasi.TempatLahir"></label>
+                        <input asp-for="InformasiAplikasi.TempatLahir" class="form-control" />
                     </div>
                     <div class="col-md-4">
-                        <label asp-for="TanggalLahir"></label>
-                        <input asp-for="TanggalLahir" class="form-control" type="date" />
+                        <label asp-for="InformasiAplikasi.TanggalLahir"></label>
+                        <input asp-for="InformasiAplikasi.TanggalLahir" class="form-control" type="date" />
                     </div>
                     
                     <div class="col-md-4">
-                        <label asp-for="JenisKelamin"></label>
-                        <input asp-for="JenisKelamin" class="form-control" />
+                        <label asp-for="InformasiAplikasi.JenisKelamin"></label>
+                        <input asp-for="InformasiAplikasi.JenisKelamin" class="form-control" />
                     </div>
                     <div class="col-12">
-                        <label asp-for="Alamat" class="form-label"></label>
-                        <textarea asp-for="Alamat" class="form-control" rows="2"></textarea>
+                        <label asp-for="InformasiAplikasi.Alamat" class="form-label"></label>
+                        <textarea asp-for="InformasiAplikasi.Alamat" class="form-control" rows="2"></textarea>
                     </div>
 
                     <div class="col-md-4">
-                        <label asp-for="KodePos" class="form-label"></label>
-                        <input asp-for="KodePos" class="form-control"  />
+                        <label asp-for="InformasiAplikasi.KodePos" class="form-label"></label>
+                        <input asp-for="InformasiAplikasi.KodePos" class="form-control"  />
                     </div>
                     <hr />
 
                     @* Informasi 1 *@
                     <div class="col-md-4">
-                        <label asp-for="UmurPemohon"></label>
-                        <select asp-for="UmurPemohon" class="form-select">
-                            <option value="">-- Select --</option>
+                        <label asp-for="GroupItem.UmurPemohon"></label>
+                        <select asp-for="GroupItem.UmurPemohon" class="form-select">
+                            <option value="0">-- Select --</option>
                             <option value="25">56 - 65 Tahun</option>
                             <option value="50">21 - 30 Tahun</option>
                             <option value="100">31 - 45 Tahun</option>
@@ -59,17 +59,17 @@
                     </div>
                     <div class="col-md-4"></div>
                     <div class="col-md-6">
-                        <label asp-for="UmurPemohonPlusTenor" class="form-label"></label>
-                        <select asp-for="UmurPemohonPlusTenor" class="form-select">
-                            <option value="">-- Select --</option>
+                        <label asp-for="GroupItem.UmurPemohonPlusTenor" class="form-label"></label>
+                        <select asp-for="GroupItem.UmurPemohonPlusTenor" class="form-select">
+                            <option value="0">-- Select --</option>
                             <option value="25"> Diatas Ketentuan</option>
                             <option value="100">Dibawah Ketentuan</option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="StatusPerkawinan" class="form-label"></label>
-                        <select asp-for="StatusPerkawinan" class="form-select">
-                            <option value="">-- Select --</option>
+                        <label asp-for="GroupItem.StatusPerkawinan" class="form-label"></label>
+                        <select asp-for="GroupItem.StatusPerkawinan" class="form-select">
+                            <option value="0">-- Select --</option>
                             <option value="25">Belum Kawin dengan > 2 tanggungan</option>
                             <option value="45">Belum Kawin dengan <= 2 tanggungan</option>
                             <option value="65">Belum Kawin dengan 0 tanggungan</option>
@@ -78,9 +78,9 @@
                         </select>
                     </div>
                     <div class="col-6">
-                        <label asp-for="Pendidikan" class="form-label" ></label>
-                        <select asp-for="Pendidikan" class="form-select">
-                            <option value="">-- Select --</option>
+                        <label asp-for="GroupItem.Pendidikan" class="form-label" ></label>
+                        <select asp-for="GroupItem.Pendidikan" class="form-select">
+                            <option value="0">-- Select --</option>
                             <option value="25">SMA atau dibawahnya</option>
                             <option value="50">D1, D2, D3, D4</option>
                             <option value="75">S1</option>
@@ -91,17 +91,17 @@
 
                     @* Informasi 2 *@
                     <div class="col-8">
-                        <label asp-for="AlamatTempatTinggal" class="form-label"></label>
-                        <select asp-for="AlamatTempatTinggal" class="form-select">
-                            <option value="">-- Select --</option>
+                        <label asp-for="GroupItem.AlamatTempatTinggal" class="form-label"></label>
+                        <select asp-for="GroupItem.AlamatTempatTinggal" class="form-select">
+                            <option value="0">-- Select --</option>
                             <option value="25">Tidak sesuai dengan data Bank</option>
                             <option value="100">Sesuai dengan data Bank</option>
                         </select>
                     </div>
                     <div class="col-8">
-                        <label asp-for="KepemilikanTempatTinggal" class="form-label"></label>
-                        <select asp-for="KepemilikanTempatTinggal" class="form-select">
-                            <option value="">-- Select --</option>
+                        <label asp-for="GroupItem.KepemilikanTempatTinggal" class="form-label"></label>
+                        <select asp-for="GroupItem.KepemilikanTempatTinggal" class="form-select">
+                            <option value="0">-- Select --</option>
                             <option value="25">Lain-lain</option>
                             <option value="50">Sewa / Kontrak</option>
                             <option value="75">Milik sendiri masih diangsur</option>
@@ -110,9 +110,9 @@
                     </div>
                     <div class="col-2"></div>
                     <div class="col-8">
-                        <label asp-for="LamaMenempati" class="form-label"></label>
-                        <select asp-for="LamaMenempati" class="form-select">
-                            <option value="" > -- Select -- </option>
+                        <label asp-for="GroupItem.LamaMenempati" class="form-label"></label>
+                        <select asp-for="GroupItem.LamaMenempati" class="form-select">
+                            <option value="0" > -- Select -- </option>
                             <option value="25"> <= 2 Tahun</option>
                             <option value="50"> > 2 - 5 Tahun</option>
                             <option value="75"> > 5 - 8 Tahun</option>
@@ -123,9 +123,9 @@
 
                     @* Informasi 3 *@
                     <div class="col-6">
-                        <label asp-for="KategoriPerusahaan" class="form-label"></label>
-                        <select asp-for="KategoriPerusahaan" class="form-select">
-                            <option value=""> -- Select -- </option>
+                        <label asp-for="GroupItem.KategoriPerusahaan" class="form-label"></label>
+                        <select asp-for="GroupItem.KategoriPerusahaan" class="form-select">
+                            <option value="0"> -- Select -- </option>
                             <option value="100"> Lembaga Departemen </option>
                             <option value="25"> BUMD </option>
                             <option value="100"> SWASTA tidak punya rating </option>
@@ -136,18 +136,18 @@
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label asp-for="Jabatan" class="form-label"></label>
-                        <select asp-for="Jabatan" class="form-select">
-                            <option value=""> -- Select -- </option>
-                            <option value=""> Staff </option>
-                            <option value=""> Direktur </option>
-                            <option value=""> Komisaris </option>
+                        <label asp-for="GroupItem.Jabatan" class="form-label"></label>
+                        <select asp-for="GroupItem.Jabatan" class="form-select">
+                            <option value="0"> -- Select -- </option>
+                            <option value="25"> Staff </option>
+                            <option value="75"> Direktur </option>
+                            <option value="100"> Komisaris </option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <label asp-for="LamaBekerja" class="form-label"></label>
-                        <select asp-for="LamaBekerja" class="form-select">
-                            <option value=""> -- Select -- </option>
+                        <label asp-for="GroupItem.LamaBekerja" class="form-label"></label>
+                        <select asp-for="GroupItem.LamaBekerja" class="form-select">
+                            <option value="0"> -- Select -- </option>
                             <option value="25"> <= 2 Tahun </option>
                             <option value="50"> > 2 - 5 Tahun </option>
                             <option value="75"> > 5 - 10 Tahun </option>
@@ -155,9 +155,9 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="PendapatanTHP" class="form-label"></label>
-                        <select asp-for="PendapatanTHP" class="form-select">
-                            <option value=""> -- Select -- </option>
+                        <label asp-for="GroupItem.PendapatanTHP" class="form-label"></label>
+                        <select asp-for="GroupItem.PendapatanTHP" class="form-select">
+                            <option value="0"> -- Select -- </option>
                             <option value="25"> <= Rp 10 juta </option>
                             <option value="50"> > Rp 10 - Rp 25 juta </option>
                             <option value="75"> > Rp 25 - Rp 50 juta </option>
@@ -168,9 +168,9 @@
 
                     @* Informasi 4 *@
                     <div class="col-md-6">
-                        <label asp-for="RekeningBank" class="form-label"></label>
-                        <select asp-for="RekeningBank" class="form-select">
-                            <option value=""> -- Select -- </option>
+                        <label asp-for="GroupItem.RekeningBank" class="form-label"></label>
+                        <select asp-for="GroupItem.RekeningBank" class="form-select">
+                            <option value="0"> -- Select -- </option>
                             <option value="25"> Tidak ada</option>
                             <option value="50"> Tabungan </option>
                             <option value="75"> Giro </option>
@@ -178,9 +178,9 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for ="RataRataSaldoPerBulan" class="form-label"></label>
-                        <select asp-for ="RataRataSaldoPerBulan" class="form-select">
-                            <option value=""> -- Select -- </option>
+                        <label asp-for ="GroupItem.RataSaldoPerBulan" class="form-label"></label>
+                        <select asp-for ="GroupItem.RataSaldoPerBulan" class="form-select">
+                            <option value="0"> -- Select -- </option>
                             <option value="25"> <= Rp 10 juta</option>
                             <option value="50"> Rp 10 - Rp 25 juta </option>
                             <option value="75"> Rp 25 - Rp 50 juta </option>
@@ -188,72 +188,72 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="TrackRecordPembayaran" class="form-label"></label>
-                        <select asp-for="TrackRecordPembayaran" class="form-select">
-                            <option value=""> --Select-- </option>
-                            <option value="value"> Peminjam Baru </option>
-                            <option value="value"> Angsuran terlambat tapi lancar </option>
-                            <option value="value"> Angsuran tepat waktu </option>
+                        <label asp-for="GroupItem.TrackRecordPembayaran" class="form-label"></label>
+                        <select asp-for="GroupItem.TrackRecordPembayaran" class="form-select">
+                            <option value="0"> --Select-- </option>
+                            <option value="25"> Peminjam Baru </option>
+                            <option value="50"> Angsuran terlambat tapi lancar </option>
+                            <option value="100"> Angsuran tepat waktu </option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="TrackDataSLIK" class="form-label"></label>
-                        <select asp-for="TrackDataSLIK" class="form-select">
-                            <option value=""> --Select-- </option>
-                            <option value="value"> Kolektibilitas 3 sd 5 </option>
-                            <option value="value"> Ada tunggakan < 3 bulan </option>
-                            <option value="value"> Tidak ada fasilitas </option>
-                            <option value="value"> Lancar </option>
+                        <label asp-for="GroupItem.TrackDataSLIK" class="form-label"></label>
+                        <select asp-for="GroupItem.TrackDataSLIK" class="form-select">
+                            <option value="0"> --Select-- </option>
+                            <option value="0"> Kolektibilitas 3 sd 5 </option>
+                            <option value="50"> Ada tunggakan < 3 bulan </option>
+                            <option value="75"> Tidak ada fasilitas </option>
+                            <option value="100"> Lancar </option>
                          </select>
                     </div>
 					<div class="col-md-6">
-						<label asp-for="KepemilikanKartuKredit" class="form-label"></label>
-						<select asp-for="KepemilikanKartuKredit" class="form-select">
-	                        <option value=""> --Select-- </option>
+						<label asp-for="GroupItem.KepemilikanKartuKredit" class="form-label"></label>
+						<select asp-for="GroupItem.KepemilikanKartuKredit" class="form-select">
+	                        <option value="0"> --Select-- </option>
 	                        <option value="25"> Tidak ada </option>
-	                        <option value="value"> Basic </option>
-	                        <option value="value"> Gold </option>
-	                        <option value="value"> Platinum atau diatasnya </option>
+	                        <option value="50"> Basic </option>
+	                        <option value="75"> Gold </option>
+	                        <option value="100"> Platinum atau diatasnya </option>
                         </select>
 					</div>
                     <hr />
 
                     @* Informasi 5 *@
                     <div class="col-md-6">
-                        <label asp-for="Tenor" class="form-label"></label>
-                        <select asp-for="Tenor" class="form-select">
-                            <option> -- Select -- </option>
-                            <option> > 15 Tahun </option>
-                            <option> > 10 - 15 Tahun </option>
-                            <option> > 5 - 10 Tahun </option>
-                            <option> <= 5 Tahun </option>
+                        <label asp-for="GroupItem.Tenor" class="form-label"></label>
+                        <select asp-for="GroupItem.Tenor" class="form-select">
+                            <option value="0"> -- Select -- </option>
+                            <option value="25"> > 15 Tahun </option>
+                            <option value="50"> > 10 - 15 Tahun </option>
+                            <option value="75"> > 5 - 10 Tahun </option>
+                            <option value="100"> <= 5 Tahun </option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="DebtServiceRatio" class="form-label"></label>
-                        <select asp-for="DebtServiceRatio" class="form-select">
-                            <option> -- Select -- </option>
-                            <option> > 50% </option>
-                            <option> > 40 - 50% </option>
-                            <option> > 30 - 40% </option>
-                            <option> > <= 30% </option>
+                        <label asp-for="GroupItem.DebtServiceRatio" class="form-label"></label>
+                        <select asp-for="GroupItem.DebtServiceRatio" class="form-select">
+                            <option value="0"> -- Select -- </option>
+                            <option value="0"> > 50% </option>
+                            <option value="50"> > 40 - 50% </option>
+                            <option value="75"> > 30 - 40% </option>
+                            <option value="100"> > <= 30% </option>
                         </select>
                     </div>
                     <hr/>
 
                     @* Informasi 6 *@
                     <div class="col-md-6">
-                        <label asp-for="HasilAppraisal" class="form-label"></label>
-                        <select asp-for="HasilAppraisal" class="form-select">
-                            <option value=""> -- Select -- </option>
-                            <option value="25"> Tidak Direkomendasikan </option>
+                        <label asp-for="GroupItem.HasilAppraisal" class="form-label"></label>
+                        <select asp-for="GroupItem.HasilAppraisal" class="form-select">
+                            <option value="0"> -- Select -- </option>
+                            <option value="0"> Tidak Direkomendasikan </option>
                             <option value="100"> Marketable </option>
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="LuasBangunan" class="form-label"></label>
-                        <select asp-for="LuasBangunan" class="form-select">
-                            <option value=""> -- Select -- </option>
+                        <label asp-for="GroupItem.LuasBangunan" class="form-label"></label>
+                        <select asp-for="GroupItem.LuasBangunan" class="form-select">
+                            <option value="0"> -- Select -- </option>
                             <option value="25"> > 200 M2 </option>
                             <option value="50"> > 100 - 200 M2 </option>
                             <option value="75"> > 45 - 100 M2 </option>
@@ -261,9 +261,9 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="TujuanDariPembiayaan" class="form-label"></label>
-                        <select asp-for="TujuanDariPembiayaan" class="form-select">
-                            <option value=""> --Select-- </option>
+                        <label asp-for="GroupItem.TujuanPembiayaan" class="form-label"></label>
+                        <select asp-for="GroupItem.TujuanPembiayaan" class="form-select">
+                            <option value="0"> --Select-- </option>
                             <option value="25"> Lain-lain </option>
                             <option value="50"> Disewakan/Investasi </option>
                             <option value="75"> Renovasi </option>
@@ -271,9 +271,9 @@
                         </select>
                     </div>
                     <div class="col-md-6">
-                        <label asp-for="LTV" class="form-label"></label>
-                        <select asp-for="LTV" class="form-select">
-                            <option value=""> --Select-- </option>
+                        <label asp-for="GroupItem.LTV" class="form-label"></label>
+                        <select asp-for="GroupItem.LTV" class="form-select">
+                            <option value="0"> --Select-- </option>
                             <option value="25"> LTV > 90% </option>
                             <option value="50"> LTV > 80% </option>
                             <option value="75"> LTV > 70% </option>
@@ -282,7 +282,6 @@
                         </select>
                     </div>
                     <div class="col-12 text-end">
-                        @* <a class="btn btn-secondary me-2" href="@Url.Action("ViewScoring", "Menu", new { InformasiApplikasiViewModel =  model})">View</a> *@
                         <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                 </form>

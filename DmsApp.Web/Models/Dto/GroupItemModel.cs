@@ -2,27 +2,29 @@
 {
     public class GroupItemModel
     {
-        public double UmurPemohonBobot { get; set; }
-        public double UmurPemohonPlusTenorBobot { get; set; }
-        public double StatusPerkawinanBobot { get; set; }
-        public double PendidikanBobot { get; set; }
-        public double AlamatTempatTinggalBobot { get; set; }
-        public double KepemilikanTempatTinggalBobot { get; set; }
-        public double LamaMenempatiBobot { get; set; }
-        public double KategoriPerusahaanBobot { get; set; }
-        public double JabatanBobot { get; set; }
-        public double LamaBekerjaBobot { get; set; }
-        public double PendapatanTHPBobot { get; set; }
-        public double RekeningBankBobot { get; set; }
-        public double RataSaldoPerBulanBobot { get; set; }
-        public double TrackRecordPembayaranBobot { get; set; }
-        public double TrackDataSLIKBobot { get; set; }
-        public double KepemilikanKartuKreditBobot { get; set; }
-        public double TenorBobot { get; set; }
-        public double DebtServiceRatioBobot { get; set; }
-        public double HasilAppraisalBobot { get; set; }
-        public double LuasBangunanBobot { get; set; }
-        public double TujuanPembiayaanBobot { get; set; }
-        public double LTVBobot { get; set; }
+        public int UmurPemohon { get; set; }
+        public int UmurPemohonPlusTenor { get; set; }
+        public int StatusPerkawinan { get; set; }
+        public int Pendidikan { get; set; }
+        public int AlamatTempatTinggal { get; set; }
+        public int KepemilikanTempatTinggal { get; set; }
+
+        public int LamaMenempati { get; set; }
+        public int KategoriPerusahaan { get; set; }
+        public int Jabatan { get; set; }
+        public int LamaBekerja { get; set; }
+        public int PendapatanTHP { get; set; }
+        public int RekeningBank { get; set; }
+        public int RataSaldoPerBulan { get; set; }
+        public int TrackRecordPembayaran { get; set; }
+        public int TrackDataSLIK { get; set; }
+        public int KepemilikanKartuKredit { get; set; }
+        public int Tenor { get; set; }
+        public int DebtServiceRatio { get; set; }
+        public int HasilAppraisal { get; set; }
+        public int LuasBangunan { get; set; }
+        public int TujuanPembiayaan { get; set; }
+        public int LTV { get; set; }
+
     }
 }

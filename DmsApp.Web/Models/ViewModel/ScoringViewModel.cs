@@ -6,6 +6,5 @@ namespace DmsApp.Web.Models.ViewModel
     {
         public InformasiApplikasiViewModel InformasiAplikasi { get; set; } = new InformasiApplikasiViewModel();
         public GroupItemModel GroupItem { get; set; } = new GroupItemModel();
-        public GroupitemSummaryModel GroupitemSummary { get; set; } = new GroupitemSummaryModel();
     }
 }
