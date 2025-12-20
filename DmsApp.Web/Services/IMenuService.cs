@@ -1,4 +1,4 @@
-﻿using DmsApp.Web.Models;
+﻿using DmsApp.Web.Models.ViewModel;
 
 namespace DmsApp.Web.Services
 {

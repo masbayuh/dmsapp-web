@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
-namespace DmsApp.Web.Models
+namespace DmsApp.Web.Models.ViewModel
 {
-    public class GroupItemModel
+    public class InformasiApplikasiViewModel
     {
         public long Id { get; set; }
         [DisplayName("Nomor Applikasi")]

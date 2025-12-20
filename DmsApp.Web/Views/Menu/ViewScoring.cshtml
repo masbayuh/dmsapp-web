@@ -1,0 +1,146 @@
+﻿@using DmsApp.Web.Models.ViewModel
+@model ScoringViewModel
+@{
+    ViewData["Title"] = "View Scoring";
+}
+
+<div class="row">
+    <div class="col-lg-16">
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h3>Scoring Views</h3>
+
+                <dl class="row">
+                    <dt class="col-sm-4">Nomor Applikasi :</dt>
+                    <dd></dd>
+                    <dt class="col-sm-4">Nama : </dt>
+                    <dd class="text-muted mb-1">@Model.InformasiAplikasi.Nama</dd>
+                </dl>
+
+                <div class="row">
+                    <div class="col-lg-4" >
+                        <h4>Bobot Item</h4>
+                        <dl class="row">
+                            <dt class="col-md-9">Umur Pemohon :</dt>
+                            <dd class="col-md-3">@Model.GroupItem.UmurPemohonBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9">Umur Pemohon + Tenor :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.UmurPemohonPlusTenorBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9">Status Perkawinan :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.StatusPerkawinanBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9">Pendidikan :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.PendidikanBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-sm-9">Alamat Tempat Tinggal :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.AlamatTempatTinggalBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9">Kepemilikan Tempat Tinggal :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.KepemilikanTempatTinggalBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9">Lama Menempati :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.LamaMenempatiBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Kategori Perusahaan :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.KategoriPerusahaanBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Jabatan :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.JabatanBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Lama Bekerja :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.LamaBekerjaBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Pendapatan THP :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.PendapatanTHPBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Rekening Bank :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.RekeningBankBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Rata-rata saldo per bulan :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.RataSaldoPerBulanBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Track record pembayaran :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.TrackRecordPembayaranBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Track data SLIK :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.TrackDataSLIKBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Kepemilikan kartu kredit :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.KepemilikanKartuKreditBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Tenor :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.TenorBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Debt Service Ratio :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.DebtServiceRatioBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Hasil Appraisal :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.HasilAppraisalBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Luas Bangunan :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.LuasBangunanBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> Tujuan dari pembiayaan :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.TujuanPembiayaanBobot</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-9"> LTV :</dt>
+                            <dd class="col-md-2">@Model.GroupItem.LTVBobot</dd>
+                        </dl>
+                    </div>
+                    <div class="col-lg-5">
+                        <h4>Bobot Informasi</h4>
+                        <dl class="row">
+                            <dt class="col-md-7">Informasi 1 :</dt>
+                            <dd class="col-md-2">@Model.GroupitemSummary.Informasi1</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-7">Informasi 2 :</dt>
+                            <dd class="col-md-2">@Model.GroupitemSummary.Informasi2</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-7">Informasi 3 :</dt>
+                            <dd class="col-md-2">@Model.GroupitemSummary.Informasi3</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-7">Informasi 4 :</dt>
+                            <dd class="col-md-2">@Model.GroupitemSummary.Informasi4</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-7">Informasi 5 :</dt>
+                            <dd class="col-md-2">@Model.GroupitemSummary.Informasi5</dd>
+                        </dl>
+                        <dl class="row">
+                            <dt class="col-md-7">Informasi 6 :</dt>
+                            <dd class="col-md-2">@Model.GroupitemSummary.Informasi6</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div>
+                    <a asp-action="Scoring" class="btn btn-secondary">Back to List</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

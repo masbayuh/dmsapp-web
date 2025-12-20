@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace DmsApp.Web.Models
+namespace DmsApp.Web.Models.ViewModel
 {
     public class MenuItem
     {

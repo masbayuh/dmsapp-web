@@ -1,5 +1,5 @@
-﻿@* @page *@
-@model DmsApp.Web.Models.MenuItem
+﻿@using DmsApp.Web.Models.ViewModel
+@model MenuItem
 @{
     ViewData["Title"] = "Detail";
 }
@@ -33,7 +33,7 @@
                 </dl>
 
                 <div class="mt-3">
-                    <a class="btn btn-secondary" href="@Url.Action("Index", "Menu")">Back</a>
+                    <a class="btn btn-secondary" href="@Url.Action("Dashboard", "Menu")">Back</a>
                     <a class="btn btn-outline-primary" href="@Url.Action("Edit", "Menu", new { id = Model.Id })">Edit</a>
                     <a class="btn btn-outline-danger" href="@Url.Action("Delete", "Menu", new { id = Model.Id })">Delete</a>
                 </div>

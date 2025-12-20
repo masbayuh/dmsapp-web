@@ -15,4 +15,8 @@
 	<FrameworkReferences Include="Microsoft.AspNetCore.App" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\Repository\" />
+  </ItemGroup>
+
 </Project>

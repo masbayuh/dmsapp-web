@@ -1,5 +1,6 @@
-﻿
-@model DmsApp.Web.Models.GroupItemModel
+﻿@using DmsApp.Web.Models.ViewModel
+
+@model InformasiApplikasiViewModel
 @{
     ViewData["Title"] = "Scoring Menu";
 }
@@ -279,6 +280,9 @@
                             <option value="100"> LTV <= 70% </option>
                             <option value="0"> LTV > 100% </option>
                         </select>
+                    </div>
+                    <div class="col-12 text-end">
+                        <a class="btn btn-secondary me-2" href="@Url.Action("ViewScoring", "Menu")">View</a>
                     </div>
                 </form>
             </div>

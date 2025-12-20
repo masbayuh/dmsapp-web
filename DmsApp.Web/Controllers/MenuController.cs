@@ -1,5 +1,7 @@
 ﻿using DmsApp.Web.Models;
+using DmsApp.Web.Models.ViewModel;
 using DmsApp.Web.Services;
+//using DmsApp.Web.Views.Menu;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DmsApp.Web.Controllers
@@ -83,9 +85,22 @@ namespace DmsApp.Web.Controllers
             return RedirectToAction(nameof(Dashboard));
         }
 
-        public IActionResult Scoring()
+        [HttpPost, ActionName("Scoring")]
+        [ValidateAntiForgeryToken]
+        public IActionResult Scoring(InformasiApplikasiViewModel model)
         {
-            var model = new GroupItemModel();
+            //var model = new InformasiApplikasiViewModel();
+            //model = informasiApplikasiView;
+
+            Console.WriteLine("Model Applikasi: " + model);
+
+
+            return View(model);
+        }
+
+        public IActionResult ViewScoring()
+        {
+            var model = new ScoringViewModel();
             return View(model);
         }
     }
