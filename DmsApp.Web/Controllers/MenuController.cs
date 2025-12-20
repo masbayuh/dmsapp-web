@@ -1,8 +1,9 @@
 ﻿using DmsApp.Web.Models;
 using DmsApp.Web.Models.ViewModel;
 using DmsApp.Web.Services;
-//using DmsApp.Web.Views.Menu;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace DmsApp.Web.Controllers
 {
@@ -58,6 +59,8 @@ namespace DmsApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit(int id, MenuItem model)
         {
+            Console.WriteLine("Model Edit: " + model);
+
             if (id != model.Id) return NotFound();
             if (ModelState.IsValid) return View(model);
 
@@ -85,22 +88,39 @@ namespace DmsApp.Web.Controllers
             return RedirectToAction(nameof(Dashboard));
         }
 
-        [HttpPost, ActionName("Scoring")]
-        [ValidateAntiForgeryToken]
-        public IActionResult Scoring(InformasiApplikasiViewModel model)
+        public IActionResult Scoring()
         {
-            //var model = new InformasiApplikasiViewModel();
+            var model = new InformasiApplikasiViewModel();
             //model = informasiApplikasiView;
 
-            Console.WriteLine("Model Applikasi: " + model);
+            //Console.WriteLine("Model Applikasi: " + model);
 
 
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Scoring(InformasiApplikasiViewModel model)
+        {
+            TempData["ScoringData"] = JsonSerializer.Serialize(model);
+
+            return RedirectToAction("ViewScoring");
+        }
+
         public IActionResult ViewScoring()
         {
-            var model = new ScoringViewModel();
+            if (TempData["ScoringData"] is not string json)
+            {
+                return RedirectToAction("Scoring");
+            }
+
+            var model = JsonSerializer.Deserialize<InformasiApplikasiViewModel>(json);
+
+            if (model == null)
+            {
+                return RedirectToAction("Scoring");
+            }
             return View(model);
         }
     }
