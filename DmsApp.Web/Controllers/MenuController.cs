@@ -10,6 +10,8 @@ namespace DmsApp.Web.Controllers
     public class MenuController : Controller
     {
         private readonly IMenuService _service;
+        private readonly ScoringService ScoringService = new ScoringService();
+
         public MenuController(IMenuService service)
         {
             _service = service;
@@ -100,12 +102,7 @@ namespace DmsApp.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Scoring(ScoringViewModel viewModel)
         {
-            var model = new ViewScoringViewModel();
-
-            model.InformasiAplikasi = viewModel.InformasiAplikasi;
-            //ngitungnya disini
-            //model.BobotGroupItem = viewModel.GroupItem;
-
+            var model = ScoringService.DetailScoring(viewModel);
             TempData["ScoringData"] = JsonSerializer.Serialize(model);
 
             return RedirectToAction("ViewScoring");
@@ -118,7 +115,7 @@ namespace DmsApp.Web.Controllers
                 return RedirectToAction("Scoring");
             }
 
-            var model = JsonSerializer.Deserialize<ViewScoringViewModel>(json);
+            var model = JsonSerializer.Deserialize<DetailScoringViewModel>(json);
 
             if (model == null)
             {
