@@ -20,7 +20,6 @@ namespace DmsApp.Web.Services
                 result.GroupitemSummary.Informasi5 +
                 result.GroupitemSummary.Informasi6;
 
-
             return result;
         }
 
@@ -63,7 +62,7 @@ namespace DmsApp.Web.Services
             bobotItem.KepemilikanTempatTinggalBobot = getBobot(item.KepemilikanTempatTinggal, 30);
             bobotItem.LamaMenempatiBobot = getBobot(item.LamaMenempati, 30);
             bobotItem.KategoriPerusahaanBobot = getBobot(item.KategoriPerusahaan, 20);
-            bobotItem.JabatanBobot = getBobot(item.Jabatan, 30);
+            bobotItem.JabatanBobot = getBobot(item.Jabatan, 20);
             bobotItem.LamaBekerjaBobot = getBobot(item.LamaBekerja, 20);
             bobotItem.PendapatanTHPBobot = getBobot(item.PendapatanTHP, 40);
             bobotItem.RekeningBankBobot = getBobot(item.RekeningBank, 10);
@@ -76,7 +75,7 @@ namespace DmsApp.Web.Services
             bobotItem.HasilAppraisalBobot = getBobot(item.HasilAppraisal, 10);
             bobotItem.LuasBangunanBobot = getBobot(item.LuasBangunan, 20);
             bobotItem.TujuanPembiayaanBobot = getBobot(item.TujuanPembiayaan, 10);
-            bobotItem.LTVBobot = getBobot(item.LTV, 50);
+            bobotItem.LTVBobot = getBobot(item.LTV, 60);
 
             return bobotItem;
         }

@@ -105,10 +105,10 @@ namespace DmsApp.Web.Controllers
             var model = ScoringService.DetailScoring(viewModel);
             TempData["ScoringData"] = JsonSerializer.Serialize(model);
 
-            return RedirectToAction("ViewScoring");
+            return RedirectToAction("DetailScoring");
         }
 
-        public IActionResult ViewScoring()
+        public IActionResult DetailScoring()
         {
             if (TempData["ScoringData"] is not string json)
             {
